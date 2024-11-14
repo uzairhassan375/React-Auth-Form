@@ -45,7 +45,7 @@ const Task2 = () => {
     }
 
     if (isValid) {
-      console.log("Form submitted:", { email, password });
+      console.log("Form is submitted:", { email, password });
       setEmail("");
       setPassword("");
     }
