@@ -1,0 +1,69 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling for the Navigation Bar */
+nav {
+    background: linear-gradient(135deg, #4b0000, #000261);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    display: flex; /* Display links in a row */
+    justify-content: center; /* Centers the nav items horizontally */
+    align-items: center;
+}
+
+/* Link Styles */
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 1.5rem; /* Horizontal padding for spacing */
+    transition: color 0.3s ease, transform 0.3s ease;
+    margin: 0 15px; /* Adds space between links */
+    display: inline-block; /* Ensures the links are inline */
+}
+
+/* Hover effect - Underline Animation */
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: #e731b1;
+    transition: width 0.3s ease;
+}
+
+/* Hover effect on link */
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #e731b1;
+    transform: scale(1.05);
+}
+
+/* Active Link Style */
+nav a.active {
+    color: #e731b1;
+}
+
+nav a.active::after {
+    width: 100%;
+    height: 2px;
+    background: #e731b1;
+}
+
+/* Hover Text Gradient */
+nav a:hover {
+    background: linear-gradient(135deg, #e731b1, #e731b1);
+    -webkit-background-clip: text;
+    color: transparent;
+}
