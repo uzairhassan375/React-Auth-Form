@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div>
         <Nav />
-        <h1 style={{ fontSize: "160px", fontWeight: "bold" }}>React Project</h1>
+        <h1 className="text-[160px] font-bold">React Project</h1>
         <BottomNavbar />
     </div>
   )

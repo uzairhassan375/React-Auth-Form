@@ -22,85 +22,80 @@ function Task1() {
   };
 
   return (
-    <div
-      className="flex items-center justify-center min-h-screen bg-cover bg-center"
-      style={{
-        backgroundImage: `url('/wallpaper1.jpg')`,  // The image is now in the 'public' folder
-      }}
-    >
-      <div className="w-full max-w-md p-8 bg-white opacity-90 shadow-lg rounded-lg">
-        <h2 className="text-2xl font-bold text-center text-gray-800">Registration Form</h2>
-        <form onSubmit={handleSubmit(onSubmit)} className="mt-6">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-[#4b0000] to-[#000261]">
+      <div className="w-full max-w-md p-8 bg-white shadow-2xl rounded-xl transform transition-all duration-300 hover:scale-105">
+        <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-6">Registration Form</h2>
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           {/* First Name */}
-          <div className="mb-4">
-            <label className="text-sm font-medium text-gray-600">First Name</label>
+          <div>
+            <label className="block text-md font-semibold text-gray-700 mb-1">First Name</label>
             <input
               type="text"
               {...register("firstName", { required: "First name is required", validate: validateFirstName })}
-              className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#e731b1] transition duration-300"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#e731b1] focus:ring-2 focus:ring-[#e731b1] transition duration-300"
             />
-            {errors.firstName && <p className="text-red-600 text-sm mt-1">{errors.firstName.message}</p>}
+            {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName.message}</p>}
           </div>
 
           {/* Second Name */}
-          <div className="mb-4">
-            <label className="text-sm font-medium text-gray-600">Second Name</label>
+          <div>
+            <label className="block text-md font-semibold text-gray-700 mb-1">Second Name</label>
             <input
               type="text"
               {...register("secondName", { required: "Second name is required", validate: validateSecondName })}
-              className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#e731b1] transition duration-300"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#e731b1] focus:ring-2 focus:ring-[#e731b1] transition duration-300"
             />
-            {errors.secondName && <p className="text-red-600 text-sm mt-1">{errors.secondName.message}</p>}
+            {errors.secondName && <p className="text-red-500 text-sm mt-1">{errors.secondName.message}</p>}
           </div>
 
           {/* User Name */}
-          <div className="mb-4">
-            <label className="text-sm font-medium text-gray-600">User Name</label>
+          <div>
+            <label className="block text-md font-semibold text-gray-700 mb-1">User Name</label>
             <input
               type="text"
               {...register("userName", { required: "Username is required", validate: validateUserName })}
-              className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#e731b1] transition duration-300"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#e731b1] focus:ring-2 focus:ring-[#e731b1] transition duration-300"
             />
-            {errors.userName && <p className="text-red-600 text-sm mt-1">{errors.userName.message}</p>}
+            {errors.userName && <p className="text-red-500 text-sm mt-1">{errors.userName.message}</p>}
           </div>
 
           {/* Email */}
-          <div className="mb-4">
-            <label className="text-sm font-medium text-gray-600">Email</label>
+          <div>
+            <label className="block text-md font-semibold text-gray-700 mb-1">Email</label>
             <input
               type="email"
               {...register("email", { required: "Email is required", validate: validateEmail })}
-              className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#e731b1] transition duration-300"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#e731b1] focus:ring-2 focus:ring-[#e731b1] transition duration-300"
             />
-            {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email.message}</p>}
+            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
           </div>
 
           {/* Password */}
-          <div className="mb-4">
-            <label className="text-sm font-medium text-gray-600">Password</label>
+          <div>
+            <label className="block text-md font-semibold text-gray-700 mb-1">Password</label>
             <input
               type="password"
               {...register("password", { required: "Password is required", validate: validatePassword })}
-              className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#e731b1] transition duration-300"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#e731b1] focus:ring-2 focus:ring-[#e731b1] transition duration-300"
             />
-            {errors.password && <p className="text-red-600 text-sm mt-1">{errors.password.message}</p>}
+            {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>}
           </div>
 
           {/* Phone Number */}
-          <div className="mb-4">
-            <label className="text-sm font-medium text-gray-600">Phone Number</label>
+          <div>
+            <label className="block text-md font-semibold text-gray-700 mb-1">Phone Number</label>
             <input
               type="text"
               {...register("phoneNo", { required: "Phone number is required", validate: validatePhoneNo })}
               placeholder="+92XXX XXXXXXX"
-              className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#e731b1] transition duration-300"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#e731b1] focus:ring-2 focus:ring-[#e731b1] transition duration-300"
             />
-            {errors.phoneNo && <p className="text-red-600 text-sm mt-1">{errors.phoneNo.message}</p>}
+            {errors.phoneNo && <p className="text-red-500 text-sm mt-1">{errors.phoneNo.message}</p>}
           </div>
 
           <button
             type="submit"
-            className="w-full py-2 bg-[#3182ce] text-white rounded-md hover:bg-[#dd6b20] transition-all duration-300 transform hover:scale-105"
+            className="w-full py-3 mt-6 bg-gradient-to-r from-[#3182ce] to-[#e731b1] text-white font-bold rounded-lg hover:from-[#dd6b20] hover:to-[#e731b1] transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
             Submit
           </button>

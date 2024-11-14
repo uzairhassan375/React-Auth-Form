@@ -5,12 +5,9 @@ import Todo from '../src/pages/Todo/Todo';
 import About from '../src/pages/AboutUs/AboutUs'; 
 import AuthForm from './pages/AuthForm';
 
-
-import './App.css';
-
 function App() {
   return (
-    <div className="App">
+    <div className="text-center">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/todo" element={<Todo />} />
