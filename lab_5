@@ -1,0 +1,136 @@
+#include <iostream>
+using namespace std;
+
+// Node class representing each element in the linked list
+class Node {
+public:
+    int data;
+    Node* next;
+
+    Node(int value){
+        data=value;
+        next=nullptr;
+    } 
+};
+
+// SinglyLinkedList class
+class SinglyLinkedList {
+private:
+    Node* header;
+
+public:
+    // Constructor initializes the header node
+    SinglyLinkedList() : header(nullptr) {}
+
+    // Method to return the size of the linked list
+    int size() {
+        int count = 0;
+        Node* current = header;
+        while (current != nullptr) {
+            count++;
+            current = current->next;
+        }
+        return count;
+    }
+
+    // Method to print the linked list
+    void printList() {
+        if (header == nullptr) {
+            cout << "The list is empty." << endl;
+            return;
+        }
+        Node* current = header;
+        while (current != nullptr) {
+            cout << current->data << " -> ";
+            current = current->next;
+        }
+        cout << "nullptr" << endl;
+    }
+
+    // Method to check if a value x is contained in the linked list
+    bool contains(int x) {
+        Node* current = header;
+        while (current != nullptr) {
+            if (current->data == x) {
+                return true;
+            }
+            current = current->next;
+        }
+        return false;
+    }
+
+    // Method to add a value x to the linked list if it is not already present
+    void add(int x) {
+        if (contains(x)) {
+            cout << x << " is already in the list. Not adding." << endl;
+            return;
+        }
+        Node* newNode = new Node(x);
+        newNode->next = header;
+        header = newNode;
+        cout << x << " added to the list." << endl;
+    }
+
+    // Method to remove a value x from the linked list if it is present
+    void remove(int x) {
+        if (header == nullptr) {
+            cout << "The list is empty. Nothing to remove." << endl;
+            return;
+        }
+
+        // Special case: Removing the header node
+        if (header->data == x) {
+            Node* temp = header;
+            header = header->next;
+            delete temp;
+            cout << x << " removed from the list." << endl;
+            return;
+        }
+
+        // General case: Removing non-header nodes
+        Node* current = header;
+        while (current->next != nullptr && current->next->data != x) {
+            current = current->next;
+        }
+
+        if (current->next == nullptr) {
+            cout << x << " not found in the list." << endl;
+        } else {
+            Node* temp = current->next;
+            current->next = current->next->next;
+            delete temp;
+            cout << x << " removed from the list." << endl;
+        }
+    }
+};
+
+// Main function to test the SinglyLinkedList class
+int main() {
+    SinglyLinkedList list;
+
+    list.add(10);
+    list.add(20);
+    list.add(30);
+
+    cout << "List after adding elements: ";
+    list.printList();
+
+    cout << "Size of the list: " << list.size() << endl;
+
+    cout << "Checking if 20 is in the list: " << (list.contains(20) ? "Yes" : "No") << endl;
+    cout << "Checking if 40 is in the list: " << (list.contains(40) ? "Yes" : "No") << endl;
+
+    list.add(40);
+    cout << "List after adding 40: ";
+    list.printList();
+
+    list.remove(20);
+    cout << "List after removing 20: ";
+    list.printList();
+
+    list.remove(50);
+    cout << "Trying to remove 50: ";
+    list.printList();
+
+    return 0;
+}
