@@ -5,7 +5,7 @@ const AuthForm = () => {
     return (
         <div>
             <Task1 />
-            <Task3 />
+            <Task2 />
         </div>
     );
 };
